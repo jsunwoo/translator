@@ -1,21 +1,43 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.StringTokenizer;
 
 /**
  * Created by jinsu on 2016-09-14.
  */
+
 public class translator {
     public static void main(String[] args) {
-        String temp = "대한민국 미국 영국";
+        try {
+            BufferedReader in;
+            StringTokenizer st;
+            String readLine;
 
-        StringTokenizer st = new StringTokenizer(temp," ");
+            in = new BufferedReader(new FileReader("test.txt"));
 
-        String token = "";
-        while (st.hasMoreElements()) {
+            while ((readLine = in.readLine()) != null) {
+                System.out.println(readLine);
+                StringTokenizer firstToken = new StringTokenizer(readLine, " ");
+                tokenCheck(firstToken);
+            }
 
-            token = st.nextToken();
+            in.close();
 
-            System.out.println(token);
+
+            String token = "";
+            while (st.hasMoreElements()) {
+
+                token = st.nextToken();
+
+
+                System.out.println(token.charAt(0));
+
+            }
+        } catch (Exception e) {
+            System.out.println("Exception error");
         }
     }
 
+    private static void tokenCheck(StringTokenizer firstToken) {
+    }
 }
