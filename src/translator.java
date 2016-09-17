@@ -72,11 +72,11 @@ public class translator {
             initialVal = st.nextToken();
 
             fullSentence.append("\tint _AD_i = 0;\n");
-            fullSentence.append("\tint _AD_result = "+ initialVal + ";\n\n");
+            fullSentence.append("\tint _AD_result = " + initialVal + ";\n\n");
             fullSentence.append("\tfor(_AD_i = 0; _AD_i < _AD_size; _AD_i++ {\n");
-            fullSentence.append("\t\t_AD_result "+ op + "= " + id2 + "[_AD_i];\n");
+            fullSentence.append("\t\t_AD_result " + op + "= " + id2 + "[_AD_i];\n");
             fullSentence.append("\t}\n");
+        } else if (firstToken.equals("(print")) {
         }
-
     }
 }
